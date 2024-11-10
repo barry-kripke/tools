@@ -1,11 +1,5 @@
 # tools
-Scripte für Ubuntu
+Scripte für Ubuntu run this command
 
-run these commands step by step 
+curl -L -o /tmp/install_pihole.sh https://raw.githubusercontent.com/barry-kripke/tools/main/install_pihole.sh && chmod +x /tmp/install_pihole.sh && sudo bash /tmp/install_pihole.sh
 
-
-
-wget -O /tmp/pihole-install-custom.sh https://raw.githubusercontent.com/barry-kripke/tools/main/pihole-install-custom.sh
-chmod +x /tmp/pihole-install-custom.sh
-sudo bash /tmp/pihole-install-custom.sh
-sudo bash -x /tmp/pihole-install-custom.sh (this is for more dtails during installation)
