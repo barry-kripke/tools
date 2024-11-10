@@ -1,7 +1,11 @@
 # tools
 Scripte für Ubuntu
-wget -O /tmp/pihole-install-custom.sh https://raw.githubusercontent.com/barry-kripke/tools/main/pihole-install-custom.sh && sudo bash /tmp/pihole-install-custom.sh
+
+run these commands step by step 
 
 
-chmod +x /path/to/destination/pihole-install-custom.sh
-sudo /path/to/destination/pihole-install-custom.sh
+
+wget -O /tmp/pihole-install-custom.sh https://raw.githubusercontent.com/barry-kripke/tools/main/pihole-install-custom.sh
+chmod +x /tmp/pihole-install-custom.sh
+sudo bash /tmp/pihole-install-custom.sh
+sudo bash -x /tmp/pihole-install-custom.sh (this is for more dtails during installation)
