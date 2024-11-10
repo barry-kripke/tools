@@ -1,10 +1,11 @@
 #!/bin/bash
 
-# Repository-URL (öffentliches Repository auf GitHub)
-REPO_URL="https://github.com/barry-kripke/tools.git"
+# GitHub URL zum Skript
+SCRIPT_URL="https://raw.githubusercontent.com/barry-kripke/tools/main/pihole-install-custom.sh"
 
-# Zielverzeichnis, in dem die Skripte gespeichert werden sollen (angepasst für den Benutzer)
-TARGET_DIR="/home/user/my-scripts"  # Ändere den Pfad entsprechend
+# Zielverzeichnis und Datei
+TARGET_DIR="/home/user/my-scripts"
+SCRIPT_NAME="pihole-install-custom.sh"
 
 # Sicherstellen, dass das Zielverzeichnis existiert
 if [ ! -d "$TARGET_DIR" ]; then
@@ -12,16 +13,13 @@ if [ ! -d "$TARGET_DIR" ]; then
   mkdir -p $TARGET_DIR
 fi
 
-# Repository klonen oder aktualisieren
-echo "Lade Skripte von $REPO_URL herunter..."
-cd $TARGET_DIR
-if [ ! -d ".git" ]; then
-  # Wenn das Verzeichnis noch kein Git-Repository ist, klone es
-  git clone $REPO_URL .
-else
-  # Andernfalls führe ein Pull durch, um die neuesten Änderungen zu bekommen
-  git pull
-fi
+# Skript herunterladen
+echo "Lade das Skript von GitHub herunter..."
+curl -o "$TARGET_DIR/$SCRIPT_NAME" "$SCRIPT_URL"
 
-# Skripte ausführen oder konfigurieren
-echo "Skripte wurden heruntergeladen oder aktualisiert."
+# Skript ausführbar machen
+chmod +x "$TARGET_DIR/$SCRIPT_NAME"
+
+# Skript ausführen
+echo "Führe das Skript aus..."
+sudo "$TARGET_DIR/$SCRIPT_NAME"
